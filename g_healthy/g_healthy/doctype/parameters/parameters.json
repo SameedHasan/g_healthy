@@ -1,0 +1,42 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "app_name": "G Healthy",
+    "autoname": "prompt",
+    "creation": "2023-12-04 12:52:55.238381",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "field_name",
+        "field_value"
+    ],
+    "fields": [
+        {
+            "fieldname": "field_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "FIeld Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "field_value",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Field Value"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-03-10 15:04:43.568899",
+    "modified_by": "Administrator",
+    "module": "G Healthy",
+    "name": "Parameters",
+    "naming_rule": "Set by user",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

@@ -1,0 +1,167 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "app_name": "G Healthy",
+    "autoname": "prompt",
+    "creation": "2024-04-16 12:30:31.760833",
+    "default_view": "List",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "is_group",
+        "path",
+        "label",
+        "content",
+        "page",
+        "child_page",
+        "group_by",
+        "route",
+        "labels",
+        "form_title",
+        "update_form_title",
+        "add_button_title",
+        "cancel_button_title",
+        "update_button_title",
+        "add_button_type",
+        "template",
+        "menu_item"
+    ],
+    "fields": [
+        {
+            "default": "0",
+            "description": "Use this label to group different menu items",
+            "fieldname": "is_group",
+            "fieldtype": "Check",
+            "label": "Is Group"
+        },
+        {
+            "fieldname": "path",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Path",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "label",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Label",
+            "reqd": 1
+        },
+        {
+            "fieldname": "content",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Content"
+        },
+        {
+            "fieldname": "page",
+            "fieldtype": "Link",
+            "label": "Page",
+            "options": "DocType"
+        },
+        {
+            "fieldname": "child_page",
+            "fieldtype": "Link",
+            "label": "Child Page",
+            "options": "DocType"
+        },
+        {
+            "fieldname": "group_by",
+            "fieldtype": "Link",
+            "label": "Group By",
+            "options": "Menu Items"
+        },
+        {
+            "fieldname": "route",
+            "fieldtype": "Link",
+            "label": "Route",
+            "options": "Routes",
+            "reqd": 1
+        },
+        {
+            "fieldname": "labels",
+            "fieldtype": "Heading",
+            "label": "Labels"
+        },
+        {
+            "fieldname": "form_title",
+            "fieldtype": "Data",
+            "label": "Form Title"
+        },
+        {
+            "fieldname": "update_form_title",
+            "fieldtype": "Data",
+            "label": "Update Form Title"
+        },
+        {
+            "fieldname": "add_button_title",
+            "fieldtype": "Data",
+            "label": "Add Button Title"
+        },
+        {
+            "default": "Cancel",
+            "fieldname": "cancel_button_title",
+            "fieldtype": "Data",
+            "label": "Cancel Button Title"
+        },
+        {
+            "fieldname": "update_button_title",
+            "fieldtype": "Data",
+            "label": "Update Button Title"
+        },
+        {
+            "default": "Add Button",
+            "fieldname": "add_button_type",
+            "fieldtype": "Select",
+            "label": "Add Button Type",
+            "options": "None\nAdd Button\nCustom Button"
+        },
+        {
+            "fieldname": "template",
+            "fieldtype": "Link",
+            "label": "Template",
+            "options": "React Component"
+        },
+        {
+            "fieldname": "menu_item",
+            "fieldtype": "Link",
+            "label": "Menu Item",
+            "options": "Menu Items",
+            "reqd": 1
+        }
+    ],
+    "links": [
+        {
+            "link_doctype": "Page Tabs",
+            "link_fieldname": "menu_item"
+        }
+    ],
+    "modified": "2025-03-10 15:04:44.017741",
+    "modified_by": "Administrator",
+    "module": "G Healthy",
+    "name": "Menu Tab",
+    "naming_rule": "Set by user",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "show_title_field_in_link": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": "label"
+}

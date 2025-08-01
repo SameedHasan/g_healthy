@@ -1,0 +1,68 @@
+[
+ {
+  "disable_auto_refresh": 0,
+  "disable_count": 0,
+  "disable_sidebar_stats": 0,
+  "docstatus": 0,
+  "doctype": "List View Settings",
+  "fields": "[{\"label\":\"Full Name\",\"fieldname\":\"full_name\"},{\"label\":\"Date of birth\",\"fieldname\":\"date_of_birth\"},{\"label\":\"User ID\",\"fieldname\":\"user_id\"}]",
+  "modified": "2025-07-29 12:56:00.912126",
+  "name": "Patient",
+  "total_fields": "4"
+ },
+ {
+  "disable_auto_refresh": 0,
+  "disable_count": 0,
+  "disable_sidebar_stats": 0,
+  "docstatus": 0,
+  "doctype": "List View Settings",
+  "fields": "[{\"fieldname\":\"name\",\"label\":\"ID\"},{\"fieldname\":\"patient\",\"label\":\"Patient\"},{\"fieldname\":\"current_weight\",\"label\":\"Current Weight\"},{\"fieldname\":\"previous_weight\",\"label\":\"Previous Weight\"},{\"fieldname\":\"change\",\"label\":\"Change\"},{\"fieldname\":\"bump_pic\",\"label\":\"Bump Pic\"},{\"fieldname\":\"date\",\"label\":\"Date\"}]",
+  "modified": "2025-07-30 11:51:14.880925",
+  "name": "Weight",
+  "total_fields": "10"
+ },
+ {
+  "disable_auto_refresh": 0,
+  "disable_count": 0,
+  "disable_sidebar_stats": 0,
+  "docstatus": 0,
+  "doctype": "List View Settings",
+  "fields": "[{\"label\":\"ID\",\"fieldname\":\"name\"},{\"label\":\"Patient\",\"fieldname\":\"patient\"},{\"label\":\"Activity Type\",\"fieldname\":\"activity_type\"},{\"label\":\"Duration(Min)\",\"fieldname\":\"durationmin\"},{\"label\":\"Log Date\",\"fieldname\":\"log_date\"}]",
+  "modified": "2025-07-30 11:51:32.111871",
+  "name": "Activity",
+  "total_fields": "10"
+ },
+ {
+  "disable_auto_refresh": 0,
+  "disable_count": 0,
+  "disable_sidebar_stats": 0,
+  "docstatus": 0,
+  "doctype": "List View Settings",
+  "fields": "[{\"fieldname\":\"name\",\"label\":\"ID\"},{\"fieldname\":\"expected_due_date\",\"label\":\"Expected Due Date\"},{\"fieldname\":\"patient\",\"label\":\"Patient\"},{\"fieldname\":\"status\",\"label\":\"Status\"}]",
+  "modified": "2025-07-30 13:03:45.107940",
+  "name": "Pregnancy",
+  "total_fields": "4"
+ },
+ {
+  "disable_auto_refresh": 0,
+  "disable_count": 0,
+  "disable_sidebar_stats": 0,
+  "docstatus": 0,
+  "doctype": "List View Settings",
+  "fields": "[{\"label\":\"Full Name\",\"fieldname\":\"full_name\"},{\"label\":\"Email\",\"fieldname\":\"email\"},{\"label\":\"Role Profile\",\"fieldname\":\"role_profile\"},{\"label\":\"Status\",\"fieldname\":\"status\"}]",
+  "modified": "2025-07-30 17:53:23.428518",
+  "name": "Admin",
+  "total_fields": "7"
+ },
+ {
+  "disable_auto_refresh": 0,
+  "disable_count": 0,
+  "disable_sidebar_stats": 0,
+  "docstatus": 0,
+  "doctype": "List View Settings",
+  "fields": "[{\"label\":\"File Name\",\"fieldname\":\"file_name\"},{\"label\":\"File Size\",\"fieldname\":\"file_size\"},{\"label\":\"File Type\",\"fieldname\":\"file_type\"},{\"label\":\"File URL\",\"fieldname\":\"file_url\"}]",
+  "modified": "2025-07-30 17:58:39.829246",
+  "name": "File",
+  "total_fields": "9"
+ }
+]

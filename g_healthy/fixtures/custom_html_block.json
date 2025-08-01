@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Custom HTML Block",
+  "html": "<div class=\"widget-title\">\n    <a class=\"custom-anchor-tag\" href=\"/dashboard\" target=\"_blank\">\n        <span>Dashboard</span>\n        <svg class=\"icon ml-2 icon-xs\" style=\"stroke: grey\">\n    \t\t<use class=\"\" href=\"#icon-arrow-up-right\"></use>\n    \t</svg>\n    </a>\n</div>",
+  "modified": "2025-01-06 12:35:44.148989",
+  "name": "Dashboard",
+  "private": 0,
+  "roles": [],
+  "script": null,
+  "style": ".custom-anchor-tag\n{\n    font-weight: 500;\n}\n\n.custom-anchor-tag:hover\n{\n    text-decoration: none;\n    color: #2490ef;\n}"
+ }
+]

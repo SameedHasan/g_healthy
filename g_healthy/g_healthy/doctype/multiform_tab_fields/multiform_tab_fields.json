@@ -1,0 +1,44 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "app_name": "G Healthy",
+    "autoname": "format:FIELD-{######}",
+    "creation": "2023-12-19 10:30:38.185366",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "field_name",
+        "print_width"
+    ],
+    "fields": [
+        {
+            "fieldname": "field_name",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Field Name",
+            "reqd": 1
+        },
+        {
+            "default": "12",
+            "fieldname": "print_width",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Print Width",
+            "reqd": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-03-10 15:04:44.562482",
+    "modified_by": "Administrator",
+    "module": "G Healthy",
+    "name": "Multiform Tab Fields",
+    "naming_rule": "Expression",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

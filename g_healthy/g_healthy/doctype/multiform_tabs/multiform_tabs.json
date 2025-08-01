@@ -1,0 +1,76 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "app_name": "G Healthy",
+    "creation": "2023-12-19 10:34:02.410868",
+    "default_view": "List",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "tab_title",
+        "doctype_name",
+        "tab_type",
+        "fields",
+        "component"
+    ],
+    "fields": [
+        {
+            "fieldname": "tab_title",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Tab Title",
+            "reqd": 1
+        },
+        {
+            "fieldname": "doctype_name",
+            "fieldtype": "Link",
+            "label": "Doctype Name",
+            "options": "DocType"
+        },
+        {
+            "fieldname": "fields",
+            "fieldtype": "Table",
+            "label": "Fields",
+            "options": "Multiform Tab Fields"
+        },
+        {
+            "fieldname": "tab_type",
+            "fieldtype": "Select",
+            "label": "Tab Type",
+            "options": "Default\nCustom"
+        },
+        {
+            "fieldname": "component",
+            "fieldtype": "Link",
+            "label": "Component",
+            "options": "React Component"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-03-10 15:04:42.498767",
+    "modified_by": "Administrator",
+    "module": "G Healthy",
+    "name": "Multiform Tabs",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "show_title_field_in_link": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": "tab_title"
+}

@@ -1,0 +1,213 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "app_name": "G Healthy",
+    "autoname": "prompt",
+    "creation": "2023-09-28 16:03:37.152205",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "label",
+        "sequence_number",
+        "menu_type",
+        "route",
+        "menu_item",
+        "parent_doctype",
+        "parent_doctype_1",
+        "page",
+        "view",
+        "component",
+        "form_title",
+        "update_form_title",
+        "header_settings",
+        "heading",
+        "second_field",
+        "third_field",
+        "button_settings",
+        "button_type",
+        "add_button_title",
+        "cancel_button_title",
+        "update_button_title",
+        "hide",
+        "roles_assigned",
+        "roles"
+    ],
+    "fields": [
+        {
+            "fieldname": "label",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Label",
+            "reqd": 1,
+            "width": "50%"
+        },
+        {
+            "depends_on": "eval:doc.view=='Custom View'",
+            "fieldname": "component",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Template",
+            "options": "React Component"
+        },
+        {
+            "depends_on": "eval:doc.view=='List View'",
+            "fieldname": "form_title",
+            "fieldtype": "Data",
+            "label": "Form Title"
+        },
+        {
+            "fieldname": "add_button_title",
+            "fieldtype": "Data",
+            "label": "Add Button Title"
+        },
+        {
+            "fieldname": "cancel_button_title",
+            "fieldtype": "Data",
+            "label": "Cancel Button Title"
+        },
+        {
+            "fieldname": "update_button_title",
+            "fieldtype": "Data",
+            "label": "Update Button Title"
+        },
+        {
+            "fieldname": "view",
+            "fieldtype": "Select",
+            "label": "View",
+            "options": "List View\nCustom View"
+        },
+        {
+            "depends_on": "eval:doc.menu_type==\"Route\"",
+            "fieldname": "route",
+            "fieldtype": "Link",
+            "label": "Route",
+            "mandatory_depends_on": "eval:doc.menu_type==\"Route\"",
+            "options": "Routes"
+        },
+        {
+            "fieldname": "update_form_title",
+            "fieldtype": "Data",
+            "label": "Update Form Title"
+        },
+        {
+            "default": "1",
+            "fieldname": "sequence_number",
+            "fieldtype": "Int",
+            "label": "Sequence Number",
+            "reqd": 1,
+            "width": "50%"
+        },
+        {
+            "fieldname": "page",
+            "fieldtype": "Link",
+            "label": "Doctype",
+            "options": "DocType"
+        },
+        {
+            "depends_on": "eval:doc.route",
+            "fieldname": "header_settings",
+            "fieldtype": "Heading",
+            "label": "Header Settings"
+        },
+        {
+            "description": "EXAMPLE:{fieldname1}-{fieldname2}",
+            "fieldname": "heading",
+            "fieldtype": "Data",
+            "label": "Heading Expression"
+        },
+        {
+            "fieldname": "second_field",
+            "fieldtype": "Select",
+            "label": "Second Field"
+        },
+        {
+            "fieldname": "third_field",
+            "fieldtype": "Select",
+            "label": "Third Field"
+        },
+        {
+            "fetch_from": "route.page",
+            "fieldname": "parent_doctype",
+            "fieldtype": "Data",
+            "label": "Parent Doctype",
+            "read_only": 1
+        },
+        {
+            "fieldname": "button_settings",
+            "fieldtype": "Heading",
+            "label": "Button Settings"
+        },
+        {
+            "default": "None",
+            "fieldname": "button_type",
+            "fieldtype": "Select",
+            "label": "Button Type",
+            "options": "Add Button\nCustom Button\nNone"
+        },
+        {
+            "default": "Route",
+            "fieldname": "menu_type",
+            "fieldtype": "Select",
+            "label": "Menu Type",
+            "options": "\nRoute\nMenu Item"
+        },
+        {
+            "depends_on": "eval:doc.menu_type==\"Menu Item\"",
+            "fieldname": "menu_item",
+            "fieldtype": "Link",
+            "label": "Menu Item",
+            "mandatory_depends_on": "eval:doc.menu_type==\"Menu Item\"",
+            "options": "Menu Items"
+        },
+        {
+            "fetch_from": "menu_item.page",
+            "fieldname": "parent_doctype_1",
+            "fieldtype": "Data",
+            "label": "parent Doctype",
+            "read_only": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "hide",
+            "fieldtype": "Check",
+            "label": "hide"
+        },
+        {
+            "fieldname": "roles_assigned",
+            "fieldtype": "Heading",
+            "label": "Roles Assigned"
+        },
+        {
+            "fieldname": "roles",
+            "fieldtype": "Table",
+            "label": "Roles",
+            "options": "RoutesRoles"
+        }
+    ],
+    "links": [],
+    "modified": "2025-03-10 15:04:43.254275",
+    "modified_by": "Administrator",
+    "module": "G Healthy",
+    "name": "Page Tabs",
+    "naming_rule": "Set by user",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": "label"
+}

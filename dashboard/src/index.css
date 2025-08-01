@@ -1,68 +1,563 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+	--color-primary: #1272bf;
+	--color-info: #1272bf;
+	--color-success: #00b84a;
+	--color-error: #e62204;
+	--color-warning: #ff8b18;
+	--color-text-base: #090909;
+	--color-text-primary: #616161;
+	--color-bg-base: #fafafa;
+	--color-bg-primary: #fff;
+	--color-label: #212121;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+	/* Table color */
+	--color-table-bg: #fff;
+	--color-table-header-border: #9e9e9e;
+	--color-table-header-text: #041c2f;
+	--color-table-cell-border: #e0e0e0;
+	--color-table-cell-text: #041c2f;
+	--color-table-bg-left-fixed: #fff;
+	--color-table-bg-right-fixed: #fff;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+	/* Select input color */
+	--color-select-input-border: #eee;
+	--color-select-input-text: #616161;
+	--color-input-border: #8a8a8a;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+	/* Drawer color */
+	--color-drawer-subtitle-text: #616161;
+	--color-drawer-subdescription-text: #090909;
+
+	/* Modal color */
+	--color-modal-text: #424242;
+
+	/* Button color */
+	--color-button-primary-bg: #1272bf;
+	--color-button-primary-text: #fff;
+
+	/* Tag color */
+	--color-tag-green-bg: #d1fae9;
+	--color-tag-green-text: #0f8a57;
+	--color-tag-orange-bg: #feeacd;
+	--color-tag-orange-text: #995c00;
+	--color-tag-red-bg: #ffe5e5;
+	--color-tag-red-text: #e62204;
+	--color-tag-gray-bg: rgba(0, 0, 0, 0.06);
+	--color-tag-gray-text: #616161;
+	--color-tag-blue-bg: #D0EBFB;
+	--color-tag-blue-text: #0E7DBE;
+
+	/* Font size */
+	--font-size-base: 16px;
+
+	/* Font family */
+	--font-family-base: "Neue Haas Grotesk Display", sans-serif;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+	background-color: var(--color-bg-base);
+	color: var(--color-text-base);
+	font-size: var(--font-size-base);
+	font-family: var(--font-family-base);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+label {
+	color: var(--color-label);
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 24px;
+	letter-spacing: 0.4px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 4px;
 }
+
+::-webkit-scrollbar-thumb {
+	background: #c5c5c5;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #a8a8a8;
+}
+
+/* Remove bullets from task lists in Tiptap */
+ul[data-type="taskList"] {
+	list-style: none;
+	padding-left: 0;
+}
+
+ul[data-type="taskList"] li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+/* Tags style */
+.ant-tag {
+	align-content: center;
+	align-items: center;
+	background: var(--color-tag-gray-bg);
+	border-radius: 8px;
+	border: 1px solid var(--color-tag-gray-bg);
+	display: inline-flex;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 600;
+	gap: 4px;
+	justify-content: center;
+	line-height: 16px;
+	padding: 5px 8px;
+}
+
+.ant-tag.ant-tag-default {
+	background: var(--color-tag-gray-bg);
+	color: var(--color-tag-gray-text);
+	border: 1px solid var(--color-tag-gray-bg);
+}
+
+.ant-tag.ant-tag-green {
+	background: var(--color-tag-green-bg);
+	color: var(--color-tag-green-text);
+	border-color: var(--color-tag-green-bg);
+}
+
+.ant-tag.ant-tag-orange {
+	background: var(--color-tag-orange-bg);
+	color: var(--color-tag-orange-text);
+	border-color: var(--color-tag-orange-bg);
+}
+
+.ant-tag.ant-tag-red {
+	background: var(--color-tag-red-bg);
+	color: var(--color-tag-red-text);
+	border-color: var(--color-tag-red-bg);
+}
+
+.ant-tag.ant-tag-blue {
+	background: var(--color-tag-blue-bg);
+	color: var(--color-tag-blue-text);
+	border-color: var(--color-tag-blue-bg);
+}
+
+
+/* Tags style end */
+
+/* Space style */
+
+.ant-space-gap-col-middle {
+	column-gap: 12px;
+}
+
+.ant-space-gap-row-middle {
+	row-gap: 12px;
+}
+
+/* Space style end */
+
+/* Button style*/
+
+/* Button size */
+.btn-sm {
+	padding: 6px 16px;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	height: auto;
+}
+
+.btn-md {
+	padding: 12px 24px;
+}
+
+.btn-lg {
+	padding: 14px 28px;
+	text-align: center;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 26px;
+	letter-spacing: 0.5px;
+	height: auto;
+}
+
+/* Button size end*/
+
+.ant-btn.ant-btn-primary {
+	color: var(--color-button-primary-text);
+	background: var(--color-button-primary-bg);
+}
+
+
+
+.ant-btn-color-default.ant-btn-variant-solid {
+	background: var(--color-bg-primary);
+	padding: 12px;
+	border-radius: 30px;
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.ant-btn-color-default.ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):active,
+.ant-btn-color-default.ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover {
+	background: var(--color-bg-primary);
+	padding: 12px ;
+	border-radius: 30px;
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.ant-btn-icon {
+	display: flex;
+}
+
+.atn-btn.action-btn {
+	display: flex;
+	border-radius: 40px;
+	height: 24px;
+	align-items: center;
+	justify-content: center;
+}
+
+.atn-btn.action-btn.ant-btn-variant-text:not(:disabled):not(.ant-btn-disabled):hover {
+	background: transparent;
+}
+
+
+.ant-btn-variant-solid:disabled, .ant-btn-variant-solid.ant-btn-disabled {
+    cursor: not-allowed;
+    border: none;
+    color: rgba(9, 9, 9, 0.25);
+    background: rgba(9, 9, 9, 0.04);
+    box-shadow: none;
+}
+
+/* Button style end*/
+
+/* Input style */
+
+.ant-select-multiple.ant-select-show-arrow .ant-select-selector {
+	padding: 12px 16px;
+	height: auto;
+}
+
+.ant-select-multiple .ant-select-selection-overflow .ant-select-selection-item-content {
+	color: var(--color-select-input-text);
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 16px;
+}
+
+.ant-select-multiple .ant-select-selection-item {
+	height: auto;
+}
+
+.ant-select-multiple .ant-select-selection-wrap:after,
+.ant-select-multiple .ant-select-selector:after {
+	line-height: 16px;
+}
+
+.ant-select-multiple .ant-select-selection-overflow .ant-select-selection-item {
+	padding: 4px 8px 4px 6px;
+}
+
+.ant-select-multiple .ant-select-selection-overflow-item-suffix {
+	min-height: 24px;
+}
+
+/* Input style end */
+
+/* Utility classes */
+
+.ant-dropdown {
+	z-index: 1050;
+}
+
+.ant-dropdown-placement-topLeft {
+	position: fixed;
+}
+
+/* Sidebar style */
+
+.ant-layout-sider-collapsed + .ant-dropdown-placement-topLeft {
+	margin-left: 80px;
+}
+
+.ant-layout-sider-children {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+}
+
+.ant-menu {
+	flex: 1;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.ant-menu-submenu-title {
+	padding-left: 12px !important;
+	padding-right: 12px !important;
+}
+
+.ant-menu-inline-collapsed > .ant-menu-item {
+	padding: 0px 12px;
+}
+
+.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+	padding: 0 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline {
+	background: transparent;
+}
+
+/* Sidebar style end */
+
+/* Picker style */
+
+
+
+/* Picker style end */
+
+/* Header style */
+
+.ant-layout-header .ant-space .ant-space-item {
+	display: flex;
+	align-items: center;
+}
+
+/* Header style end */
+
+/* Table style */
+
+.ant-table-wrapper .ant-table-cell-fix-left {
+	background: var(--color-table-bg-left-fixed);
+}
+
+.ant-table-wrapper .ant-table-cell-fix-right {
+	background: var(--color-table-bg-right-fixed);
+}
+
+.ant-table-wrapper .ant-table-thead > tr > th {
+	border-color: var(--color-table-header-border);
+	font-weight: 600;
+	color: var(--color-table-header-text);
+}
+
+.ant-table-wrapper .ant-table-tbody > tr > td {
+	border-color: var(--color-table-cell-border);
+	font-weight: 500;
+	color: var(--color-table-cell-text);
+}
+
+.ant-table-wrapper .ant-table-tbody > tr > td:has(.ant-tag) {
+	padding: 14px 16px 14px 0;
+}
+
+.ant-table-wrapper .ant-table .ant-table-thead {
+}
+
+.ant-table-wrapper .ant-table .ant-table-body {
+	scrollbar-gutter: stable;
+	overflow: auto !important;
+	/* min-height: calc(100vh - 290px); */
+	max-height: calc(100vh - 290px);
+}
+
+/* Hide scrollbars when not needed */
+.ant-table-body::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+.ant-table-body::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.ant-table-body::-webkit-scrollbar-thumb {
+	background: #d9d9d9;
+	border-radius: 3px;
+}
+
+.ant-table-body::-webkit-scrollbar-thumb:hover {
+	background: #bfbfbf;
+}
+
+.ant-table-wrapper .ant-table-tbody > tr > td,
+.ant-table-wrapper .ant-table-thead > tr > th {
+	padding-right: 32px;
+	padding-left: 0;
+}
+
+/* Table style end*/
+
+/* dropdown style */
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item {
+	padding: 10px 16px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+}
+
+/* dropdown style end */
+
+/* Sider Style*/
+
+.ant-layout-sider .ant-layout-sider-children .ant-menu {
+	padding-inline: 12px;
+}
+
+
+
+
+
+/* Sider Style end*/
+
+/* Modal style */
+
+.ant-modal {
+	top: 40px;
+}
+
+.ant-modal .ant-modal-content {
+	padding: 0;
+}
+
+.ant-modal .ant-modal-header {
+	padding: 24px 40px;
+	margin-bottom: 0;
+	border-bottom: 1px solid var(--color-table-cell-border);
+}
+
+.ant-modal .ant-modal-body {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	padding: 24px 32px 12px 40px;
+	min-height: 200px;
+	/* height: calc(100vh - 280px); */
+	overflow-y: auto;
+	scrollbar-gutter: stable;
+}
+
+.ant-modal .ant-modal-title {
+	color: var(--color-text-base);
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 30px;
+}
+
+.ant-modal .ant-modal-footer {
+	background-color: var(--color-bg-primary);
+	border-top: 1px solid var(--color-select-input-border);
+	padding: 12px 40px;
+	border-radius: 0 0 12px 12px;
+	margin-top: 0;
+	text-align: end;
+}
+
+.ant-modal .ant-modal-footer > .ant-btn + .ant-btn {
+	margin-inline-start: 12px;
+}
+
+.ant-modal p {
+	margin-bottom: 0;
+	color: var(--color-modal-text);
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 24px;
+	letter-spacing: 0.4px;
+}
+
+.ant-modal .ant-modal-close {
+	width: 24px;
+	height: 24px;
+	top: 28px;
+	right: 40px;
+}
+
+.ant-modal .ant-modal-close:hover {
+	position: absolute;
+	top: 28px;
+	right: 40px;
+	z-index: 1010;
+	padding: 0;
+	color: rgba(9, 9, 9, 0.65);
+	line-height: 1;
+	text-decoration: none;
+	background: transparent;
+	border-radius: 4px;
+	width: 24px;
+	height: 24px;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}
+
+.ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload.ant-upload-select {
+	width: 100%;
+	padding: 30px;
+	height: 100%;
+	border: 1px dashed var(--color-input-border);
+}
+
+.modal-image-upload-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+}
+
+.modal-image-upload-content h3 {
+	color: var(--color-text-base);
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 20px;
+	margin-bottom: 0;
+}
+
+.modal-image-upload-content h3 span {
+	color: var(--color-modal-text);
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: 0.4px;
+}
+
+.modal-image-upload-content p {
+	color: var(--color-select-input-text);
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 16px;
+	letter-spacing: 0.048px;
+	margin-bottom: 0;
+}
+
+/* Modal style end */
+
+/* Custom bullet for Tiptap bullet lists */

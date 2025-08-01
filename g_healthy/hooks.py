@@ -1,25 +1,12 @@
 app_name = "g_healthy"
 app_title = "G Healthy"
-app_publisher = "Sameed Hasan"
-app_description = "Bump App "
-app_email = "sameedh41@gmail.com"
+app_publisher = "MicroMerger"
+app_description = (
+    "This app created react views for Frappe doctypes without need of code"
+)
+app_email = "info@micromerger.com"
 app_license = "mit"
-
-# Apps
-# ------------------
-
 # required_apps = []
-
-# Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "g_healthy",
-# 		"logo": "/assets/g_healthy/logo.png",
-# 		"title": "G Healthy",
-# 		"route": "/g_healthy",
-# 		"has_permission": "g_healthy.api.permission.has_app_permission"
-# 	}
-# ]
 
 # Includes in <head>
 # ------------------
@@ -70,9 +57,6 @@ app_license = "mit"
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
 
-# automatically load and sync documents of this doctype from downstream apps
-# importable_doctypes = [doctype_1]
-
 # Jinja
 # ----------
 
@@ -85,8 +69,11 @@ app_license = "mit"
 # Installation
 # ------------
 
+# after_migrate = "g_healthy.after_migrate.run_after_migrate"
 # before_install = "g_healthy.install.before_install"
-# after_install = "g_healthy.install.after_install"
+# after_install = "g_healthy.after_install.run_after_install"
+
+# after_install = "g_healthy.after_install.after_install"
 
 # Uninstallation
 # ------------
@@ -125,8 +112,21 @@ app_license = "mit"
 # }
 #
 # has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
+#     "Project Concept I": "g_healthy.planning.utils.has_status_permission",
 # }
+
+# DocType Class
+# ---------------
+# Override standard doctype classes
+
+# override_doctype_class = {
+# 	"ToDo": "custom_app.overrides.CustomToDo"
+# }
+
+override_doctype_class = {
+    "DocType": "g_healthy.overrides.doctype.CustomDoctype",
+    "User": "g_healthy.overrides.user.CustomUser",
+}
 
 # Document Events
 # ---------------
@@ -139,6 +139,29 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
+# standard_queries = {"User": "g_healthy.planning.utils.user_query"}
+
+doc_events = {
+    "*": {
+        "autoname": "g_healthy.custom_hooks.custom_naming",
+        # "before_insert": "g_healthy.planning.utils.restrict_admin_access",
+    },
+    "ToDo": {
+        "before_insert": "g_healthy.apis.rest_api.todo_before_insert",
+        # "after_insert": "g_healthy.planning.utils.todo_after_insert",
+        # "on_update": "g_healthy.planning.utils.todo_on_update",
+    },
+    "User Permission": {
+        "validate": "g_healthy.utils.update_user_sectors",
+        "on_trash": "g_healthy.utils.update_user_sectors",
+    },
+    # "Time Extension": {
+    #     "after_insert": "g_healthy.planning.utils.workflow_updates",
+    #     "on_submit": "g_healthy.planning.utils.workflow_updates",
+    #     "on_update_after_submit": "g_healthy.planning.utils.workflow_updates",
+    # },
+}
+
 
 # Scheduled Tasks
 # ---------------
@@ -170,8 +193,18 @@ app_license = "mit"
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "g_healthy.event.get_events"
+# 	# "frappe.desk.doctype.event.event.get_events": "g_healthy.event.get_events"
 # }
+
+override_whitelisted_methods = {
+    "frappe.auth.get_logged_user": "g_healthy.apis.api.get_logged_user",
+    "frappe.desk.query_report.export_query": "g_healthy.apis.query_report.export_query",
+    "frappe.desk.form.assign_to.add": "g_healthy.apis.rest_api.override_share_add",
+    "frappe.core.doctype.user.user.reset_password": (
+        "g_healthy.overrides.user.custom_reset_password"
+    ),
+}
+
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -238,4 +271,45 @@ app_license = "mit"
 # }
 
 
-website_route_rules = [{'from_route': '/dashboard/<path:app_path>', 'to_route': 'dashboard'},]
+website_route_rules = [
+    {"from_route": "/dashboard/<path:app_path>", "to_route": "dashboard"},
+    {"from_route": "/dashboard/<path:app_path>", "to_route": "dashboard"},
+]
+
+fixtures = [
+    "Routes",
+    "Menu Items",
+    "Page Tabs",
+    "React Component",
+    "List View Settings",
+    "Custom HTML Block",
+    {"dt": "Workspace", "filters": [["name", "in", ["Frontend"]]]},
+    {
+        "dt": "Custom DocPerm",
+        "filters": [
+            [
+                "parent",
+                "in",
+                [
+                    "Role",
+                    "Role Profile",
+                    "Page",
+                    "Workspace",
+                    "Comment",
+                    "ToDo",
+                    "File",
+                    "Email Queue",
+                    "Notification Log",
+                    "Website Settings",
+                ],
+            ],
+            ["role", "in", ["G Healthy Admin", "G Healthy User"]],
+        ],
+    },
+    {"dt": "Role", "filters": [["is_custom", "=", 1]]},
+]
+
+on_session_creation = "g_healthy.custom_hooks.on_session_creation"
+on_logout = "g_healthy.custom_hooks.on_logout"
+
+# website_route_rules = [{'from_route': '/bump/<path:app_path>', 'to_route': 'bump'},]

@@ -1,0 +1,137 @@
+{
+ "actions": [],
+ "creation": "2025-07-29 12:28:28.032482",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "about_you_section",
+  "full_name",
+  "date_of_birth",
+  "height_feet",
+  "height_inches",
+  "race_or_ethnicity",
+  "where_do_you_live",
+  "every_bump_is_unique_section",
+  "expected_due_date",
+  "weight_before_pregnancy",
+  "weight_right_now",
+  "no_of_babies",
+  "user_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of birth"
+  },
+  {
+   "fieldname": "height_feet",
+   "fieldtype": "Int",
+   "label": "Height Feet"
+  },
+  {
+   "fieldname": "height_inches",
+   "fieldtype": "Int",
+   "label": "Height Inches"
+  },
+  {
+   "fieldname": "race_or_ethnicity",
+   "fieldtype": "Select",
+   "label": "Race or ethnicity",
+   "options": "American\nEuropean\nAfrican\nAsian\nArab"
+  },
+  {
+   "description": "Zip Code",
+   "fieldname": "where_do_you_live",
+   "fieldtype": "Int",
+   "label": "Where do you live?"
+  },
+  {
+   "fieldname": "about_you_section",
+   "fieldtype": "Section Break",
+   "label": "About You"
+  },
+  {
+   "fieldname": "every_bump_is_unique_section",
+   "fieldtype": "Section Break",
+   "label": "Every Bump is Unique"
+  },
+  {
+   "fieldname": "weight_before_pregnancy",
+   "fieldtype": "Int",
+   "label": "Weight before pregnancy"
+  },
+  {
+   "fieldname": "weight_right_now",
+   "fieldtype": "Int",
+   "label": "Weight right now"
+  },
+  {
+   "fieldname": "no_of_babies",
+   "fieldtype": "Select",
+   "label": "How many babies are you expecting?",
+   "options": "1\n2\n3\n4\n5\n6\n7\n8"
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "label": "User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "expected_due_date",
+   "fieldtype": "Date",
+   "label": "Expected Due Date"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Pregnancy",
+   "link_doctype": "Pregnancy",
+   "link_fieldname": "patient"
+  }
+ ],
+ "modified": "2025-07-30 12:50:07.133136",
+ "modified_by": "Administrator",
+ "module": "G Healthy",
+ "name": "Patient",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Patient",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name"
+}

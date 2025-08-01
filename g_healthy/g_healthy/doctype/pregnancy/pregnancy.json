@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "creation": "2025-07-30 09:57:30.020971",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "expected_due_date",
+  "patient",
+  "status",
+  "weight_before",
+  "current_weight",
+  "no_of_babies_expected"
+ ],
+ "fields": [
+  {
+   "fieldname": "expected_due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Expected Due Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "is_status": 1,
+   "label": "Status",
+   "options": "Ongoing\nCompleted\nAborted",
+   "reqd": 1
+  },
+  {
+   "fieldname": "weight_before",
+   "fieldtype": "Float",
+   "label": "Weight Before"
+  },
+  {
+   "fieldname": "current_weight",
+   "fieldtype": "Float",
+   "label": "Current Weight"
+  },
+  {
+   "fieldname": "no_of_babies_expected",
+   "fieldtype": "Select",
+   "label": "How many babies are you expecting?",
+   "options": "1\n2\n3\n4\n5\n6"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Logs",
+   "link_doctype": "Activity",
+   "link_fieldname": "pregnancy"
+  },
+  {
+   "group": "Logs",
+   "link_doctype": "Weight",
+   "link_fieldname": "pregnancy"
+  }
+ ],
+ "modified": "2025-07-30 12:49:26.155664",
+ "modified_by": "Administrator",
+ "module": "G Healthy",
+ "name": "Pregnancy",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Patient",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

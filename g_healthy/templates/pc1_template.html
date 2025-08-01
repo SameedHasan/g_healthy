@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PC-1 {{ doc.project_title }}</title>
+    <style>
+        /* (Insert the full CSS from your reference HTML here) */
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="document-container">
+            <div class="header">
+                <div class="main-title">PC-1</div>
+                <div class="subtitle">{{ doc.project_title }}</div>
+            </div>
+
+            <!-- Top Table: Costs -->
+            <table class="top-table">
+                <tr>
+                    <td class="cost-label">ORIGINAL APPROVED COST</td>
+                    <td class="cost-value">{{ doc.original_approved_cost }}</td>
+                </tr>
+                <tr>
+                    <td class="cost-label">REVISED APPROVED COST</td>
+                    <td class="cost-value">{{ doc.revised_approved_cost }}</td>
+                </tr>
+                <tr>
+                    <td class="cost-label">CURRENT APPROVED COST</td>
+                    <td class="cost-value">{{ doc.current_approved_cost }}</td>
+                </tr>
+            </table>
+
+            <div class="page-break"></div>
+
+            <!-- Section 1: Project Title -->
+            <div class="section">
+                <div class="section-heading">
+                    <div class="title">1. Project Title:</div>
+                    <p>{{ sections.project_title.fields.project_title }}</p>
+                </div>
+            </div>
+
+            <!-- Section 2: Location -->
+            <div class="section">
+                <div class="section-heading">
+                    <div class="title">2. Location:</div>
+                </div>
+                <div class="content indentation">
+                    <div class="row">
+                        <div class="col">
+                            <div class="title">Province:</div>
+                            <p>{{ sections.location.fields.province }}</p>
+                        </div>
+                        <div class="col">
+                            <div class="title">District's:</div>
+                            <p>
+                                {% for d in sections.location.fields.district_names %}
+                                {{ d }}{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                        <!-- Add tehsil/constituency if needed -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Authorities responsible for -->
+            <div class="section">
+                <div class="section-heading">
+                    <div class="title">3. Authorities responsible for:</div>
+                    <div>{{ project_title }}</div>
+                </div>
+                <div class="content indentation">
+                    <div class="subsection">
+                        <div class="heading">3.1. Sponsoring Agency</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>{{ sections.authorities.fields.sponsoring_agency }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="subsection">
+                        <div class="heading">3.2. Execution Agency</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>{{ sections.authorities.fields.executing_agency }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Plan Provision -->
+            <div class="section">
+                <div class="section-heading">
+                    <div class="title">4. Plan Provision:</div>
+                    <div>{{ project_title }}</div>
+                </div>
+                <div class="content"><strong>{{ sections.plan_provision.fields.plan_provision }}</strong></div>
+            </div>
+
+            <!-- Section 5: Project Objectives -->
+            <div class="section">
+                <div class="section-heading">
+                    <div class="title">5. Project Objectives:</div>
+                </div>
+                <div class="content indentation">
+                    <div class="subsection">
+                        <div class="heading">5.1. Project Objectives:</div>
+                        <div class="subsection-content">
+                            <ul>
+                                <li>{{ sections.project_objectives.fields.project_objectives }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="subsection">
+                        <div class="heading">5.2. Project Scope:</div>
+                        <div class="subsection-content">
+                            <p>{{ sections.project_objectives.fields.project_scope }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Description and Justification of Project -->
+            <div class="section">
+                <div class="section-heading">
+                    <div class="title">6. Description and Justification of Project:</div>
+                </div>
+                <div class="content indentation">
+                    <div class="subsection">
+                        <div class="heading">6.1. Brief Description:</div>
+                        <div class="subsection-content">
+                            <div>{{ sections.description_justification.fields.brief_description }}</div>
+                        </div>
+                    </div>
+                    <div class="subsection">
+                        <div class="heading">6.2. Justification of Project:</div>
+                        <div class="subsection-content">
+                            <p>{{ sections.description_justification.fields.justification_of_project }}</p>
+                        </div>
+                    </div>
+                    <div class="subsection">
+                        <div class="heading">6.3. Sectoral Specific Information:</div>
+                        <div class="subsection-content">
+                            <p>{{ sections.description_justification.fields.sectoral_specific_information }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: Capital Cost Estimates (example table) -->
+            <div class="landscape-section">
+                <div class="section">
+                    <div class="section-heading">
+                        <div class="title">7. Capital Cost Estimates:</div>
+                    </div>
+                    <div class="content indentation">
+                        <!-- Example: Render a table if you have cost breakdown data -->
+                        <table class="scheme-table">
+                            <tr>
+                                <th>Sr. No.</th>
+                                <th>Object Code</th>
+                                <!-- ... add year columns dynamically if needed ... -->
+                            </tr>
+                            {% for row in sections.capital_cost_estimates.fields.cost_breakdown %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ row.object_code }}</td>
+                                <!-- ... add year values ... -->
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue for all other sections, using the same pattern -->
+            <!-- For SDGs, use nested loops as per your reference HTML and the new context structure -->
+
+        </div>
+    </div>
+</body>
+
+</html>

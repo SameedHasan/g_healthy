@@ -1,0 +1,257 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2023-10-16 15:38:47.006463",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "details_tab",
+  "is_group",
+  "path",
+  "label",
+  "content",
+  "column_break_ybq0",
+  "page",
+  "child_page",
+  "group_by",
+  "order_sequence",
+  "route",
+  "labels",
+  "form_title",
+  "update_form_title",
+  "add_button_title",
+  "column_break_ii1j",
+  "cancel_button_title",
+  "update_button_title",
+  "add_button_type",
+  "template",
+  "permissions_section",
+  "roles",
+  "tab_break_gbaw",
+  "controls_section",
+  "has_search",
+  "column_break_mtux",
+  "has_filters",
+  "column_break_pcti",
+  "has_sort",
+  "column_break_23nb",
+  "has_range_picker"
+ ],
+ "fields": [
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Label",
+   "reqd": 1
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Content"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Link",
+   "label": "Route",
+   "options": "Routes",
+   "reqd": 1
+  },
+  {
+   "fieldname": "page",
+   "fieldtype": "Link",
+   "label": "Page",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "group_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Group By",
+   "options": "Menu Items"
+  },
+  {
+   "fieldname": "path",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Path",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "labels",
+   "fieldtype": "Tab Break",
+   "label": "Labels"
+  },
+  {
+   "fieldname": "form_title",
+   "fieldtype": "Data",
+   "label": "Form Title"
+  },
+  {
+   "fieldname": "add_button_title",
+   "fieldtype": "Data",
+   "label": "Add Button Title"
+  },
+  {
+   "default": "Cancel",
+   "fieldname": "cancel_button_title",
+   "fieldtype": "Data",
+   "label": "Cancel Button Title"
+  },
+  {
+   "default": "0",
+   "description": "Use this label to group different menu items",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "update_button_title",
+   "fieldtype": "Data",
+   "label": "Update Button Title"
+  },
+  {
+   "fieldname": "update_form_title",
+   "fieldtype": "Data",
+   "label": "Update Form Title"
+  },
+  {
+   "default": "Add Button",
+   "fieldname": "add_button_type",
+   "fieldtype": "Select",
+   "label": "Add Button Type",
+   "options": "None\nAdd Button\nCustom Button"
+  },
+  {
+   "fieldname": "template",
+   "fieldtype": "Link",
+   "label": "Template",
+   "options": "React Component"
+  },
+  {
+   "fieldname": "child_page",
+   "fieldtype": "Link",
+   "label": "Child Page",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "order_sequence",
+   "fieldtype": "Int",
+   "label": "Order"
+  },
+  {
+   "fieldname": "roles",
+   "fieldtype": "Table",
+   "label": "Roles",
+   "options": "RoutesRoles"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_search",
+   "fieldtype": "Check",
+   "label": "Has Search"
+  },
+  {
+   "fieldname": "column_break_mtux",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_filters",
+   "fieldtype": "Check",
+   "label": "Has Filters"
+  },
+  {
+   "fieldname": "column_break_pcti",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_sort",
+   "fieldtype": "Check",
+   "label": "Has Sort"
+  },
+  {
+   "fieldname": "column_break_23nb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_range_picker",
+   "fieldtype": "Check",
+   "label": "Has Range Picker"
+  },
+  {
+   "fieldname": "controls_section",
+   "fieldtype": "Section Break",
+   "label": "Controls"
+  },
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "tab_break_gbaw",
+   "fieldtype": "Tab Break",
+   "label": "Controls"
+  },
+  {
+   "fieldname": "column_break_ybq0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ii1j",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "permissions_section",
+   "fieldtype": "Section Break",
+   "label": "Permissions"
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "Page Tabs",
+   "link_fieldname": "menu_item"
+  },
+  {
+   "link_doctype": "Menu Tab",
+   "link_fieldname": "menu_item"
+  }
+ ],
+ "modified": "2025-08-01 09:32:51.589783",
+ "modified_by": "Administrator",
+ "module": "G Healthy",
+ "name": "Menu Items",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "label"
+}

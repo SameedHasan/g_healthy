@@ -1,0 +1,149 @@
+[
+ {
+  "add_button_title": null,
+  "add_button_type": "None",
+  "cancel_button_title": "Cancel",
+  "docstatus": 0,
+  "doctype": "Routes",
+  "form_title": null,
+  "icon": "AppUserIcon",
+  "ishidden": 0,
+  "modified": "2025-07-30 10:49:55.614824",
+  "name": "App Users",
+  "page": "Patient",
+  "page_view": "List",
+  "path": "/app-users",
+  "roles": [
+   {
+    "parent": "App Users",
+    "parentfield": "roles",
+    "parenttype": "Routes",
+    "title": "G Healthy Admin"
+   },
+   {
+    "parent": "App Users",
+    "parentfield": "roles",
+    "parenttype": "Routes",
+    "title": "System Manager"
+   }
+  ],
+  "sequence_number": 1,
+  "title": "Users",
+  "update_button_title": null,
+  "update_form_title": null
+ },
+ {
+  "add_button_title": null,
+  "add_button_type": "None",
+  "cancel_button_title": "Cancel",
+  "docstatus": 0,
+  "doctype": "Routes",
+  "form_title": null,
+  "icon": "LogsIcon",
+  "ishidden": 0,
+  "modified": "2025-07-30 10:10:33.435195",
+  "name": "Logs",
+  "page": null,
+  "page_view": "Menu",
+  "path": "/logs",
+  "roles": [
+   {
+    "parent": "Logs",
+    "parentfield": "roles",
+    "parenttype": "Routes",
+    "title": "System Manager"
+   }
+  ],
+  "sequence_number": 2,
+  "title": "Logs",
+  "update_button_title": null,
+  "update_form_title": null
+ },
+ {
+  "add_button_title": null,
+  "add_button_type": "None",
+  "cancel_button_title": "Cancel",
+  "docstatus": 0,
+  "doctype": "Routes",
+  "form_title": null,
+  "icon": "DashboardIcon",
+  "ishidden": 0,
+  "modified": "2025-07-30 11:20:30.760388",
+  "name": "Dashboard",
+  "page": null,
+  "page_view": "Dashboard",
+  "path": "/",
+  "roles": [
+   {
+    "parent": "Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Routes",
+    "title": "System Manager"
+   }
+  ],
+  "sequence_number": 0,
+  "title": "Dashboard",
+  "update_button_title": null,
+  "update_form_title": null
+ },
+ {
+  "add_button_title": null,
+  "add_button_type": "None",
+  "cancel_button_title": "Cancel",
+  "docstatus": 0,
+  "doctype": "Routes",
+  "form_title": null,
+  "icon": "SettingsIcon",
+  "ishidden": 0,
+  "modified": "2025-07-30 15:39:47.511703",
+  "name": "Settings",
+  "page": null,
+  "page_view": "Menu",
+  "path": "/settings",
+  "roles": [
+   {
+    "parent": "Settings",
+    "parentfield": "roles",
+    "parenttype": "Routes",
+    "title": "System Manager"
+   },
+   {
+    "parent": "Settings",
+    "parentfield": "roles",
+    "parenttype": "Routes",
+    "title": "G Healthy Admin"
+   }
+  ],
+  "sequence_number": 12,
+  "title": "Settings",
+  "update_button_title": null,
+  "update_form_title": null
+ },
+ {
+  "add_button_title": null,
+  "add_button_type": "None",
+  "cancel_button_title": "Cancel",
+  "docstatus": 0,
+  "doctype": "Routes",
+  "form_title": null,
+  "icon": "MediaIcon",
+  "ishidden": 0,
+  "modified": "2025-07-30 10:50:04.291509",
+  "name": "Media",
+  "page": null,
+  "page_view": "Menu",
+  "path": "/media",
+  "roles": [
+   {
+    "parent": "Media",
+    "parentfield": "roles",
+    "parenttype": "Routes",
+    "title": "System Manager"
+   }
+  ],
+  "sequence_number": 3,
+  "title": "Media",
+  "update_button_title": null,
+  "update_form_title": null
+ }
+]

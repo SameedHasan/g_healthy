@@ -1,0 +1,19 @@
+.modal-image-upload {
+  width: 100%;
+  padding: 24px 0;
+  border: 2px dashed #d9d9d9;
+  border-radius: 12px;
+  background: #fafbfc;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.modal-image-upload .ant-upload {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}

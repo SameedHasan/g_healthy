@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Concept I - {{ doc.name }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #116132 0%, #0d4a28 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #116132;
+        }
+
+        .section-content {
+            padding: 20px;
+        }
+
+        .field-group {
+            margin-bottom: 25px;
+        }
+
+        .field-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .field-value {
+            color: #212529;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .field-value.single {
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 4px solid #116132;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-table th {
+            background: #116132;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .data-table tr:hover {
+            background: #e9ecef;
+        }
+
+        .list-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .tab-section {
+            margin-bottom: 30px;
+        }
+
+        .tab-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #116132;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #116132;
+        }
+
+        .no-data {
+            color: #6c757d;
+            font-style: italic;
+            padding: 20px;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Project Concept I</h1>
+            <div class="subtitle">{{ doc.name }}</div>
+        </div>
+
+        <div class="content">
+            {% if sections %}
+            {% for section in sections %}
+            <div class="tab-section">
+                <div class="tab-title">{{ section.tab }} - {{ section.section }}</div>
+
+                {% if section.fields %}
+                {% for field_name, field_data in section.fields.items() %}
+                <div class="field-group">
+                    <div class="field-label">{{ field_data.label }}</div>
+
+                    {% if field_data.data %}
+                    <!-- Handle child table data -->
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    {% for key, value in field_data.data[0].items() %}
+                                    {% if key not in ['name', 'owner', 'creation', 'modified', 'modified_by',
+                                    'docstatus', 'parent', 'parentfield', 'parenttype', 'idx'] %}
+                                    <th>{{ key|replace('_', ' ')|title }}</th>
+                                    {% endif %}
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in field_data.data %}
+                                <tr>
+                                    {% for key, value in row.items() %}
+                                    {% if key not in ['name', 'owner', 'creation', 'modified', 'modified_by',
+                                    'docstatus', 'parent', 'parentfield', 'parenttype', 'idx'] %}
+                                    <td>
+                                        {% if value is mapping %}
+                                        <!-- Handle nested objects -->
+                                        {% for nested_key, nested_value in value.items() %}
+                                        <strong>{{ nested_key|replace('_', ' ')|title }}:</strong> {{ nested_value
+                                        }}<br>
+                                        {% endfor %}
+                                        {% else %}
+                                        {{ value|default('', true) }}
+                                        {% endif %}
+                                    </td>
+                                    {% endif %}
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <!-- Handle single value -->
+                    <div class="field-value single">
+                        {% if field_data.value is mapping %}
+                        <!-- Handle object values -->
+                        {% for key, value in field_data.value.items() %}
+                        <div><strong>{{ key|replace('_', ' ')|title }}:</strong> {{ value }}</div>
+                        {% endfor %}
+                        {% else %}
+                        {{ field_data.value|default('', true) }}
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="no-data">No data available for this section</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="no-data">No sections data available</div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

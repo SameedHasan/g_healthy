@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>System Updating</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-bg-light: rgba(255, 255, 255, 0.05);
+            --glass-bg-medium: rgba(255, 255, 255, 0.15);
+            --glass-backdrop-light: blur(8px);
+            --glass-backdrop-medium: blur(12px);
+            --glass-backdrop-heavy: blur(20px);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+            --glass-border-light: 1px solid rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --glass-shadow-medium: 0 12px 40px rgba(0, 0, 0, 0.15);
+            --glass-shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --primary-color: #116132;
+            --primary-light: #e6f4ea;
+            --primary-dark: #0d4a28;
+            --accent-color: #e67e22;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666;
+            --text-muted: #888;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .page-card-head {
+            display: none;
+        }
+
+        .navbar {
+            display: none;
+        }
+
+        .page-card {
+            max-width: 500px;
+            background: transparent !important;
+            border: none;
+        }
+
+        .update-container {
+            max-width: 520px;
+            margin: 60px auto;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-backdrop-heavy);
+            -webkit-backdrop-filter: var(--glass-backdrop-heavy);
+            border: var(--glass-border);
+            border-radius: 24px;
+            padding: 48px 40px 40px 40px;
+            text-align: center;
+            box-shadow: var(--glass-shadow-heavy);
+            position: relative;
+            z-index: 2;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .update-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .update-title {
+            color: var(--primary-color);
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .update-message {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .update-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .update-indicator svg {
+            width: 64px;
+            height: 64px;
+            animation: spin 3s linear infinite;
+            filter: drop-shadow(0 4px 12px rgba(17, 97, 50, 0.3));
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #d35400 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 8px;
+            box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .refresh-hint {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 32px;
+            line-height: 1.5;
+            padding: 20px;
+            background: var(--glass-bg-light);
+            backdrop-filter: var(--glass-backdrop-light);
+            -webkit-backdrop-filter: var(--glass-backdrop-light);
+            border: var(--glass-border-light);
+            border-radius: 16px;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: var(--glass-bg-light);
+            border-radius: 2px;
+            margin: 24px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            border-radius: 2px;
+            animation: progress 2s ease-in-out infinite;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes progress {
+            0% {
+                width: 0%;
+            }
+
+            50% {
+                width: 70%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin: 0 4px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .update-container {
+                margin: 40px 20px;
+                padding: 32px 24px 24px 24px;
+                border-radius: 20px;
+            }
+
+            .update-title {
+                font-size: 1.875rem;
+            }
+
+            .update-message {
+                font-size: 1rem;
+            }
+
+            .update-indicator svg {
+                width: 56px;
+                height: 56px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="update-container">
+        <div class="update-indicator">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="3" fill="var(--primary-light)" />
+                <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09c.73 0 1.38-.41 1.51-1a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09c.59-.13 1-.78 1-1.51V3a2 2 0 0 1 4 0v.09c0 .73.41 1.38 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09c.13.59.78 1 1.51 1H21a2 2 0 0 1 0 4h-.09c-.73 0-1.38.41-1.51 1z"
+                    fill="var(--primary-light)" />
+            </svg>
+        </div>
+
+        <div class="update-title">Exciting Updates in Progress!</div>
+
+        <div class="update-message">
+            We're working on something awesome behind the scenes <span class="emoji">🚀</span><br>
+            Hang tight while we refresh the system with powerful new features<br>
+            and improvements just for you! <span class="emoji">✨</span>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+
+        <div class="status-badge">HTTP 503 - Service Temporarily Unavailable</div>
+
+        <div class="refresh-hint">
+            This won't take long — please check back shortly.<br>
+            If you keep seeing this message, reach out to your administrator.<br>
+            Thank you for your patience and support! <span class="emoji">🙏</span>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+[
+ {
+  "add_button_title": null,
+  "add_button_type": "None",
+  "cancel_button_title": "Cancel",
+  "child_page": null,
+  "content": null,
+  "docstatus": 0,
+  "doctype": "Menu Items",
+  "form_title": null,
+  "group_by": null,
+  "is_group": 0,
+  "label": "Activity",
+  "modified": "2025-07-30 11:49:58.557016",
+  "name": "Activity",
+  "order_sequence": 1,
+  "page": "Activity",
+  "path": "activity",
+  "roles": [
+   {
+    "parent": "Activity",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "System Manager"
+   }
+  ],
+  "route": "Logs",
+  "template": null,
+  "update_button_title": null,
+  "update_form_title": null
+ },
+ {
+  "add_button_title": null,
+  "add_button_type": "None",
+  "cancel_button_title": "Cancel",
+  "child_page": null,
+  "content": null,
+  "docstatus": 0,
+  "doctype": "Menu Items",
+  "form_title": null,
+  "group_by": null,
+  "is_group": 0,
+  "label": "Weight",
+  "modified": "2025-07-30 11:50:11.106379",
+  "name": "weight",
+  "order_sequence": 0,
+  "page": "Weight",
+  "path": "weight",
+  "roles": [
+   {
+    "parent": "weight",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "System Manager"
+   }
+  ],
+  "route": "Logs",
+  "template": null,
+  "update_button_title": null,
+  "update_form_title": null
+ },
+ {
+  "add_button_title": "Add New System User",
+  "add_button_type": "Add Button",
+  "cancel_button_title": "",
+  "child_page": null,
+  "content": null,
+  "docstatus": 0,
+  "doctype": "Menu Items",
+  "form_title": "Add System User",
+  "group_by": null,
+  "is_group": 0,
+  "label": "Accounts",
+  "modified": "2025-07-30 17:52:38.221710",
+  "name": "Accounts",
+  "order_sequence": 1,
+  "page": "Admin",
+  "path": "accounts",
+  "roles": [
+   {
+    "parent": "Accounts",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "System Manager"
+   },
+   {
+    "parent": "Accounts",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "G Healthy Admin"
+   }
+  ],
+  "route": "Settings",
+  "template": null,
+  "update_button_title": "Update System User",
+  "update_form_title": "Update System User"
+ },
+ {
+  "add_button_title": "Upload Media",
+  "add_button_type": "Add Button",
+  "cancel_button_title": "",
+  "child_page": null,
+  "content": null,
+  "docstatus": 0,
+  "doctype": "Menu Items",
+  "form_title": "Upload Media",
+  "group_by": null,
+  "is_group": 0,
+  "label": "Media",
+  "modified": "2025-07-30 15:50:50.367130",
+  "name": "All Media",
+  "order_sequence": 0,
+  "page": "File",
+  "path": "all",
+  "roles": [
+   {
+    "parent": "All Media",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "System Manager"
+   },
+   {
+    "parent": "All Media",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "G Healthy Admin"
+   }
+  ],
+  "route": "Media",
+  "template": null,
+  "update_button_title": null,
+  "update_form_title": null
+ },
+ {
+  "add_button_title": "Upload Video",
+  "add_button_type": "Add Button",
+  "cancel_button_title": "",
+  "child_page": null,
+  "content": null,
+  "docstatus": 0,
+  "doctype": "Menu Items",
+  "form_title": "Upload Video",
+  "group_by": null,
+  "is_group": 0,
+  "label": "Videos",
+  "modified": "2025-07-30 15:51:10.429787",
+  "name": "Videos",
+  "order_sequence": 1,
+  "page": "File",
+  "path": "videos",
+  "roles": [
+   {
+    "parent": "Videos",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "System Manager"
+   },
+   {
+    "parent": "Videos",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "G Healthy Admin"
+   }
+  ],
+  "route": "Media",
+  "template": null,
+  "update_button_title": null,
+  "update_form_title": null
+ },
+ {
+  "add_button_title": "Upload Image",
+  "add_button_type": "Add Button",
+  "cancel_button_title": "",
+  "child_page": null,
+  "content": null,
+  "docstatus": 0,
+  "doctype": "Menu Items",
+  "form_title": "Upload Image",
+  "group_by": null,
+  "is_group": 0,
+  "label": "Images",
+  "modified": "2025-07-30 15:51:31.763312",
+  "name": "Images",
+  "order_sequence": 2,
+  "page": "File",
+  "path": "images",
+  "roles": [
+   {
+    "parent": "Images",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "System Manager"
+   },
+   {
+    "parent": "Images",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "G Healthy Admin"
+   }
+  ],
+  "route": "Media",
+  "template": null,
+  "update_button_title": null,
+  "update_form_title": null
+ },
+ {
+  "add_button_title": null,
+  "add_button_type": "Add Button",
+  "cancel_button_title": "",
+  "child_page": null,
+  "content": null,
+  "docstatus": 0,
+  "doctype": "Menu Items",
+  "form_title": "Upload Audio",
+  "group_by": null,
+  "is_group": 0,
+  "label": "Audio",
+  "modified": "2025-07-30 15:52:08.094106",
+  "name": "Audio",
+  "order_sequence": 3,
+  "page": "File",
+  "path": "audio",
+  "roles": [
+   {
+    "parent": "Audio",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "System Manager"
+   },
+   {
+    "parent": "Audio",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "G Healthy Admin"
+   }
+  ],
+  "route": "Media",
+  "template": null,
+  "update_button_title": null,
+  "update_form_title": "Upload Audio"
+ },
+ {
+  "add_button_title": "Upload Document",
+  "add_button_type": "None",
+  "cancel_button_title": "",
+  "child_page": null,
+  "content": null,
+  "docstatus": 0,
+  "doctype": "Menu Items",
+  "form_title": "Upload Document",
+  "group_by": null,
+  "is_group": 0,
+  "label": "Documents",
+  "modified": "2025-07-30 15:51:48.940925",
+  "name": "Documents",
+  "order_sequence": 4,
+  "page": "File",
+  "path": "documents",
+  "roles": [
+   {
+    "parent": "Documents",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "System Manager"
+   },
+   {
+    "parent": "Documents",
+    "parentfield": "roles",
+    "parenttype": "Menu Items",
+    "title": "G Healthy Admin"
+   }
+  ],
+  "route": "Media",
+  "template": null,
+  "update_button_title": null,
+  "update_form_title": null
+ }
+]

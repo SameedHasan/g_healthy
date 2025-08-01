@@ -1,0 +1,158 @@
+{
+  "token": {
+    "colorPrimary": "#1272bf",
+    "colorInfo": "#1272bf",
+    "colorSuccess": "#00b84a",
+    "colorError": "#e62204",
+    "colorWarning": "#ff8b18",
+    "colorTextBase": "#090909",
+    "colorBgBase": "#fafafa",
+    "fontSize": 16,
+    "fontFamily": "Neue Haas Grotesk Display"
+  },
+  "components": {
+    "Button": {
+      "colorPrimaryBg": "rgb(114,46,209)",
+      "borderRadius": 40,
+      "contentFontSize": 16,
+      "lineWidth": 1,
+      "fontSize": 16,
+      "controlHeight": 48,
+      "controlHeightLG": 56,
+      "controlHeightSM": 40,
+      "paddingInline": 24,
+      "paddingInlineLG": 28,
+      "paddingInlineSM": 20,
+      "paddingBlock": 12,
+      "paddingBlockLG": 14,
+      "paddingBlockSM": 10,
+      "contentFontSizeLG": 18,
+      "fontWeight": 700,
+      "borderRadiusLG": 40,
+      "borderRadiusSM": 30,
+      "contentLineHeightLG": 1.4,
+      "contentLineHeight": 1.2,
+      "contentLineHeightSM": 1.2,
+      "colorText": "rgb(66,66,66)",
+      "ghostBg": "rgba(255,255,255,0)",
+      "defaultGhostBorderColor": "rgb(18,114,191)",
+      "defaultGhostColor": "rgb(18,114,191)",
+      "defaultBorderColor": "rgb(197,199,211)",
+      "defaultColor": "rgb(66,66,66)"
+    },
+    "Dropdown": {
+      "colorPrimary": "rgb(7,17,57)",
+      "boxShadowPopoverArrow": "0px 4px 6px -2px rgba(26, 26, 26, 0.20);",
+      "borderRadiusSM": 8,
+      "paddingBlock": 8,
+      "fontSize": 14,
+      "lineHeight": 1,
+      "controlPaddingHorizontal": 24,
+      "colorText": "rgb(22,23,29)",
+      "lineWidthFocus": 0
+    },
+    "Input": {
+      "controlHeight": 48,
+      "colorBorder": "rgb(224,224,224)",
+      "colorText": "rgb(33,33,33)",
+      "inputFontSize": 16,
+      "paddingBlock": 12,
+      "paddingInline": 16,
+      "borderRadius": 8,
+      "fontFamily": "Neue Haas Grotesk Display",
+      "colorBgContainer": "rgb(255,255,255)"
+    },
+    "Table": {
+      "headerBg": "rgb(255,255,255)",
+      "cellPaddingBlock": 16,
+      "fontSize": 16,
+      "lineHeight": 1.5,
+      "fontFamily": "Neue Haas Grotesk Display",
+      "fontWeightStrong": 500,
+      "borderColor": "rgb(224,224,224)",
+      "colorText": "rgb(4,28,47)",
+      "headerSplitColor": "rgb(255,255,255)",
+      "rowHoverBg": "transparent"
+    },
+    "Pagination": {
+      "lineWidth": 0,
+      "controlHeight": 40,
+      "borderRadius": 30,
+      "fontFamily": "Neue Haas Grotesk Display",
+      "itemActiveBg": "rgb(232,243,253)",
+      "colorPrimary": "rgb(9,9,9)",
+      "fontWeightStrong": 700,
+      "colorText": "rgb(97,97,97)",
+      "lineHeight": 2
+    },
+    "Typography": {
+      "fontSizeHeading1": 32,
+      "lineHeightHeading1": 2
+    },
+    "Card": {
+      "borderRadiusLG": 12,
+      "boxShadowCard": "0px 1px 2px 0px rgba(0, 0, 0, 0.10);",
+      "lineWidth": 0,
+      "fontFamily": "Neue Haas Grotesk Display",
+      "colorTextDescription": "rgb(9,9,9)",
+      "colorTextHeading": "rgb(9,9,9)",
+      "colorText": "rgb(9,9,9)",
+      "colorBgContainer": "rgb(255,255,255)"
+    },
+    "Modal": {
+      "borderRadiusLG": 12,
+      "boxShadow": "none",
+      "footerBg": "rgb(255,255,255)",
+      "titleColor": "rgb(9,9,9)",
+      "titleFontSize": 20,
+      "fontWeightStrong": 500,
+      "colorBgMask": "rgba(9,9,9,0.5)",
+      "controlHeight": 80,
+      "contentBg": "rgb(255,255,255)",
+      "headerBg": "rgb(255,255,255)"
+    },
+    "Select": {
+      "colorBorder": "rgb(224,224,224)",
+      "controlHeight": 48,
+      "borderRadius": 8,
+      "paddingSM": 16,
+      "optionPadding": "5px 12px",
+      "fontFamily": "Neue Haas Grotesk Display",
+      "colorFillSecondary": "rgba(0,0,0,0.06)",
+      "colorBgContainer": "rgb(255,255,255)"
+    },
+    "Tag": {
+      "borderRadiusSM": 8
+    },
+    "Layout": {
+      "bodyBg": "rgb(250,250,250)",
+      "headerBg": "rgb(250,250,250)",
+      "headerHeight": 104,
+      "siderBg": "rgb(255,255,255)"
+
+    },
+    "Menu": {
+      "itemBg": "rgb(255,255,255)",
+      "lineType": "none",
+      "fontSize": 15,
+      "itemSelectedBg": "rgb(232,243,253)",
+      "padding": 12,
+      "itemHeight": 48,
+      "itemMarginBlock": 0,
+      "itemMarginInline": 0,
+      "itemPaddingInline": 12
+    },
+    "DatePicker": {
+      "borderRadius": 30,
+      "controlHeight": 48,
+      "paddingBlock": 12,
+      "paddingInline": 24,
+      "colorBgContainer": "rgb(255,255,255)",
+      "colorBorder": "rgb(255,255,255)"
+    },
+    "Drawer": {
+      "boxShadowDrawerLeft": "0px 20px 56px -10px rgba(0, 0, 0, 0.15);",
+      "colorBgMask": "rgba(0,0,0,0)"
+    }
+  }
+}

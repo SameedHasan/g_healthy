@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "creation": "2025-07-30 10:06:03.606313",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "patient",
+  "user",
+  "date",
+  "bump_pic",
+  "current_weight",
+  "previous_weight",
+  "change",
+  "pregnancy"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "bump_pic",
+   "fieldtype": "Attach Image",
+   "label": "Bump Pic"
+  },
+  {
+   "fieldname": "current_weight",
+   "fieldtype": "Float",
+   "label": "Current Weight"
+  },
+  {
+   "fieldname": "previous_weight",
+   "fieldtype": "Float",
+   "label": "Previous Weight"
+  },
+  {
+   "fieldname": "change",
+   "fieldtype": "Float",
+   "label": "Change"
+  },
+  {
+   "fieldname": "pregnancy",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Pregnancy",
+   "options": "Pregnancy",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-30 10:06:03.606313",
+ "modified_by": "Administrator",
+ "module": "Logs",
+ "name": "Weight",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

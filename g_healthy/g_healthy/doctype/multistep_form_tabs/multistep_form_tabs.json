@@ -1,0 +1,35 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "app_name": "G Healthy",
+    "creation": "2023-12-19 13:27:54.878747",
+    "default_view": "List",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "tab"
+    ],
+    "fields": [
+        {
+            "fieldname": "tab",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Tab",
+            "options": "Multiform Tabs",
+            "reqd": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-03-10 15:04:42.786766",
+    "modified_by": "Administrator",
+    "module": "G Healthy",
+    "name": "Multistep Form Tabs",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

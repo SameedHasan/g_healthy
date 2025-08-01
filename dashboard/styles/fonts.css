@@ -1,0 +1,31 @@
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url('../src/assets/fonts/NeueHaasGroteskDisplayPro-Regular.woff2') format('woff2');
+  font-weight: normal; /* or specific weight like 400 */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url('../src/assets/fonts/NeueHaasGroteskDisplayPro-Regular.woff2') format('woff2');
+  font-weight: 500; /* or specific weight like 400 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url('../src/assets/fonts/NeueHaasGroteskDisplayPro-Medium.woff2') format('woff2');
+  font-weight: 600; /* Assuming Medium is 500 weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url('../src/assets/fonts/NeueHaasGroteskDisplayPro-Bold.woff2') format('woff2');
+  font-weight: bold; /* or specific weight like 700 */
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,51 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "app_name": "G Healthy",
+    "creation": "2023-12-19 13:28:36.488319",
+    "default_view": "List",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "form_title",
+        "tabs"
+    ],
+    "fields": [
+        {
+            "fieldname": "form_title",
+            "fieldtype": "Data",
+            "label": "Form Title"
+        },
+        {
+            "fieldname": "tabs",
+            "fieldtype": "Table",
+            "label": "Tabs",
+            "options": "Multistep Form Tabs"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-03-10 15:04:42.986961",
+    "modified_by": "Administrator",
+    "module": "G Healthy",
+    "name": "MultiStep Forms",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

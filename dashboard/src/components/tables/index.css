@@ -1,0 +1,48 @@
+.custom-pagination .ant-select-outlined:not(.ant-select-customize-input) .ant-select-selector {
+  border-radius: 30px;
+  border-color: var(--color-select-input-border);
+  background: var(--color-bg-base);
+  color: var(--color-select-input-text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+}
+
+.custom-pagination .ant-select .ant-select-arrow {
+  color: var(--color-select-input-text);
+  font-size: 14px;
+}
+
+.custom-pagination .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  padding: 10px 20px 10px 24px;
+}
+/* Hide default AntD select arrow inside pagination */
+.custom-pagination .ant-select-arrow svg {
+  display: none !important;
+}
+
+/* Inject your custom arrow */
+.custom-pagination .ant-select-arrow {
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><path d='M4 6L8 10L12 6' stroke='%23616161' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* This will apply line-height to the whole td cell */
+/* td.action-col-cell {
+  line-height: 14px;
+} */
+
+
+.action-dropdown .ant-dropdown-menu {
+  min-width: 160px;
+}
+
+
+
+
+.ant-table-wrapper .ant-table-pagination.ant-pagination {margin-bottom: 8px;}

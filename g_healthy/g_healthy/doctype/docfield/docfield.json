@@ -1,0 +1,790 @@
+{
+  "actions": [],
+  "autoname": "hash",
+  "creation": "2013-02-22 01:27:33",
+  "doctype": "DocType",
+  "document_type": "Setup",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "label_and_type",
+    "label",
+    "fieldtype",
+    "fieldname",
+    "precision",
+    "length",
+    "link_filter_name",
+    "link_filter_value",
+    "non_negative",
+    "hide_days",
+    "hide_seconds",
+    "is_yes_no_button",
+    "is_attachment_table",
+    "is_annexure_table",
+    "has_search",
+    "is_sdg_table",
+    "hide_actions",
+    "is_comment_table",
+    "is_show_drawer",
+    "is_submit_button",
+    "acts_as_child",
+    "filter_child_by",
+    "reqd",
+    "is_virtual",
+    "search_index",
+    "column_break_18",
+    "options",
+    "sort_options",
+    "show_dashboard",
+    "is_status",
+    "defaults_section",
+    "default",
+    "expression_field",
+    "parent_tab",
+    "column_break_6",
+    "fetch_from_field",
+    "fetch_from",
+    "fetch_if_empty",
+    "visibility_section",
+    "hidden",
+    "hidden_from_front",
+    "bold",
+    "allow_in_quick_entry",
+    "translatable",
+    "print_hide",
+    "print_hide_if_no_value",
+    "report_hide",
+    "column_break_28",
+    "depends_on",
+    "limit_condition",
+    "collapsible",
+    "collapsible_depends_on",
+    "hide_border",
+    "list__search_settings_section",
+    "in_list_view",
+    "in_standard_filter",
+    "in_preview",
+    "column_break_35",
+    "in_filter",
+    "in_global_search",
+    "permissions",
+    "read_only",
+    "allow_on_submit",
+    "ignore_user_permissions",
+    "allow_bulk_edit",
+    "column_break_13",
+    "permlevel",
+    "ignore_xss_filter",
+    "constraints_section",
+    "unique",
+    "no_copy",
+    "set_only_once",
+    "remember_last_selected_value",
+    "column_break_38",
+    "mandatory_depends_on",
+    "display_depends_on",
+    "compare_with",
+    "comparing_operator",
+    "read_only_depends_on",
+    "display",
+    "print_width",
+    "width",
+    "max_height",
+    "columns",
+    "column_break_22",
+    "description",
+    "documentation_url",
+    "oldfieldname",
+    "oldfieldtype"
+  ],
+  "fields": [
+    {
+      "fieldname": "label_and_type",
+      "fieldtype": "Section Break"
+    },
+    {
+      "bold": 1,
+      "fieldname": "label",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Label",
+      "oldfieldname": "label",
+      "oldfieldtype": "Data",
+      "print_width": "163",
+      "search_index": 1,
+      "width": "163"
+    },
+    {
+      "bold": 1,
+      "default": "Data",
+      "fieldname": "fieldtype",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Type",
+      "oldfieldname": "fieldtype",
+      "oldfieldtype": "Select",
+      "options": "Autocomplete\nAttach\nAttach Image\nBarcode\nButton\nCheck\nCode\nColor\nColumn Break\nCurrency\nData\nDate\nDatetime\nDuration\nDynamic Link\nFloat\nFold\nGeolocation\nHeading\nHTML\nHTML Editor\nIcon\nImage\nInt\nJSON\nLabel\nLink\nLong Text\nMarkdown Editor\nPassword\nPercent\nPhone\nRead Only\nRating\nSection Break\nSelect\nSignature\nSmall Text\nTab Break\nTable\nTable MultiSelect\nText\nText Editor\nTime",
+      "reqd": 1,
+      "search_index": 1
+    },
+    {
+      "bold": 1,
+      "fieldname": "fieldname",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Name",
+      "oldfieldname": "fieldname",
+      "oldfieldtype": "Data",
+      "search_index": 1
+    },
+    {
+      "default": "0",
+      "description": "On frontend show this check like a yes/no button or a simple checkbox",
+      "depends_on": "eval:in_list([\"Select\"], doc.fieldtype)",
+      "fieldname": "is_yes_no_button",
+      "fieldtype": "Check",
+      "in_list_view": 0,
+      "label": "Is a Yes/No Button",
+      "oldfieldname": "is_yes_no_button",
+      "oldfieldtype": "Check"
+    },
+    {
+      "default": "0",
+      "description": "On frontend create an attachment before this",
+      "depends_on": "eval:in_list([\"Table\"], doc.fieldtype)",
+      "fieldname": "is_attachment_table",
+      "fieldtype": "Check",
+      "in_list_view": 0,
+      "label": "Is Attachment Table",
+      "oldfieldname": "is_attachment_table",
+      "oldfieldtype": "Check"
+    },
+    {
+      "default": "0",
+      "description": "On frontend create an annexure before this",
+      "depends_on": "eval:in_list([\"Table\"], doc.fieldtype)",
+      "fieldname": "is_annexure_table",
+      "fieldtype": "Check",
+      "in_list_view": 0,
+      "label": "Is Annexure Table",
+      "oldfieldname": "is_annexure_table",
+      "oldfieldtype": "Check"
+    },
+    {
+      "description": "On frontend create an Search Box with this field",
+      "fieldname": "has_search",
+      "fieldtype": "Link",
+      "options": "DocType",
+      "in_list_view": 0,
+      "label": "Has Search Box",
+      "oldfieldname": "has_search",
+      "oldfieldtype": "Link"
+    },
+    {
+      "default": "0",
+      "description": "On frontend create an sdg table",
+      "depends_on": "eval:in_list([\"Table\"], doc.fieldtype)",
+      "fieldname": "is_sdg_table",
+      "fieldtype": "Check",
+      "in_list_view": 0,
+      "label": "Is SDG Table",
+      "oldfieldname": "is_sdg_table",
+      "oldfieldtype": "Check"
+    },
+    {
+      "default": "0",
+      "description": "On frontend hide child table actions",
+      "depends_on": "eval:in_list([\"Table\"], doc.fieldtype)",
+      "fieldname": "hide_actions",
+      "fieldtype": "Check",
+      "in_list_view": 0,
+      "label": "Hide Actions",
+      "oldfieldname": "hide_actions",
+      "oldfieldtype": "Check"
+    },
+    {
+      "default": "0",
+      "description": "On frontend create an comment section",
+      "fieldname": "is_comment_table",
+      "fieldtype": "Check",
+      "in_list_view": 0,
+      "label": "Is Comment Table",
+      "oldfieldname": "is_comment_table",
+      "oldfieldtype": "Check"
+    },
+    {
+      "default": "0",
+      "description": "On frontend title of the submit button",
+      "depends_on": "eval:!in_list([\"Section Break\", \"Column Break\", \"Button\", \"HTML\"], doc.fieldtype)",
+      "fieldname": "is_submit_button",
+      "fieldtype": "Check",
+      "in_list_view": 0,
+      "label": "Is Submit Button",
+      "oldfieldname": "is_submit_button",
+      "oldfieldtype": "Check",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "description": "On frontend show it as a childtable",
+      "depends_on": "eval:['Section Break'].includes(doc.fieldtype)",
+      "fieldname": "acts_as_child",
+      "fieldtype": "Check",
+      "in_list_view": 0,
+      "label": "Act as Child",
+      "oldfieldname": "acts_as_child",
+      "oldfieldtype": "Check",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "description": "Link for filtering tables acting as child.",
+      "depends_on": "eval: doc.acts_as_child === 1",
+      "fieldname": "filter_child_by",
+      "fieldtype": "Data",
+      "in_list_view": 0,
+      "label": "Filter Acting Child By",
+      "oldfieldname": "filter_child_by",
+      "oldfieldtype": "Data",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:!in_list([\"Section Break\", \"Column Break\", \"Button\", \"HTML\"], doc.fieldtype)",
+      "fieldname": "reqd",
+      "fieldtype": "Check",
+      "in_list_view": 1,
+      "label": "Mandatory",
+      "oldfieldname": "reqd",
+      "oldfieldtype": "Check",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "description": "To show in Frontend Drawer",
+      "fieldname": "is_show_drawer",
+      "fieldtype": "Check",
+      "in_list_view": 0,
+      "label": "Is show in Drawer",
+      "oldfieldname": "is_show_drawer",
+      "oldfieldtype": "Check"
+    },
+    {
+      "depends_on": "eval:in_list([\"Float\", \"Currency\", \"Percent\"], doc.fieldtype)",
+      "description": "Set non-standard precision for a Float or Currency field",
+      "fieldname": "precision",
+      "fieldtype": "Select",
+      "label": "Precision",
+      "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9",
+      "print_hide": 1
+    },
+    {
+      "depends_on": "eval:in_list(['Data', 'Link', 'Dynamic Link', 'Password', 'Select', 'Read Only', 'Attach', 'Attach Image', 'Int'], doc.fieldtype)",
+      "fieldname": "length",
+      "fieldtype": "Int",
+      "label": "Length"
+    },
+    {
+      "fieldname": "link_filter_name",
+      "fieldtype": "Data",
+      "label": "Link Filter Name"
+    },
+    {
+      "fieldname": "link_filter_value",
+      "fieldtype": "Data",
+      "label": "Link Filter Value"
+    },
+    {
+      "default": "0",
+      "fieldname": "search_index",
+      "fieldtype": "Check",
+      "label": "Index",
+      "oldfieldname": "search_index",
+      "oldfieldtype": "Check",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "fieldname": "in_list_view",
+      "fieldtype": "Check",
+      "label": "In List View",
+      "print_width": "70px",
+      "width": "70px"
+    },
+    {
+      "default": "0",
+      "fieldname": "in_standard_filter",
+      "fieldtype": "Check",
+      "label": "In List Filter"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:([\"Data\", \"Select\", \"Table\", \"Text\", \"Text Editor\", \"Link\", \"Small Text\", \"Long Text\", \"Read Only\", \"Heading\", \"Dynamic Link\"].indexOf(doc.fieldtype) !== -1)",
+      "fieldname": "in_global_search",
+      "fieldtype": "Check",
+      "label": "In Global Search"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:!in_list(['Table', 'Table MultiSelect'], doc.fieldtype);",
+      "fieldname": "in_preview",
+      "fieldtype": "Check",
+      "label": "In Preview"
+    },
+    {
+      "default": "0",
+      "fieldname": "allow_in_quick_entry",
+      "fieldtype": "Check",
+      "label": "Allow in Quick Entry"
+    },
+    {
+      "default": "0",
+      "fieldname": "bold",
+      "fieldtype": "Check",
+      "label": "Bold"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:['Data', 'Select', 'Text', 'Small Text', 'Text Editor'].includes(doc.fieldtype)",
+      "fieldname": "translatable",
+      "fieldtype": "Check",
+      "label": "Translatable"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:doc.fieldtype===\"Section Break\"",
+      "fieldname": "collapsible",
+      "fieldtype": "Check",
+      "label": "Collapsible",
+      "length": 255
+    },
+    {
+      "depends_on": "eval:doc.fieldtype==\"Section Break\" && doc.collapsible",
+      "fieldname": "collapsible_depends_on",
+      "fieldtype": "Code",
+      "label": "Collapsible Depends On (JS)",
+      "max_height": "3rem",
+      "options": "JS"
+    },
+    {
+      "fieldname": "column_break_6",
+      "fieldtype": "Column Break"
+    },
+    {
+      "description": "For Links, enter the DocType as range.\nFor Select, enter list of Options, each on a new line.",
+      "fieldname": "options",
+      "fieldtype": "Small Text",
+      "in_list_view": 1,
+      "label": "Options",
+      "oldfieldname": "options",
+      "oldfieldtype": "Text"
+    },
+    {
+      "fieldname": "default",
+      "fieldtype": "Small Text",
+      "label": "Default",
+      "max_height": "3rem",
+      "oldfieldname": "default",
+      "oldfieldtype": "Text"
+    },
+    {
+      "fieldname": "expression_field",
+      "fieldtype": "Data",
+      "label": "Expression Value",
+      "description": "Fetch multiple fields and create an expression.\ni.e {field1}-{field2}"
+    },
+    {
+      "fieldname": "parent_tab",
+      "fieldtype": "Data",
+      "label": "Parent Tab"
+    },
+    {
+      "fieldname": "fetch_from_field",
+      "fieldtype": "Data",
+      "label": "Fetch From Field"
+    },
+    {
+      "fieldname": "fetch_from",
+      "fieldtype": "Small Text",
+      "label": "Fetch From"
+    },
+    {
+      "default": "0",
+      "fieldname": "fetch_if_empty",
+      "fieldtype": "Check",
+      "label": "Fetch only if value is not set"
+    },
+    {
+      "fieldname": "permissions",
+      "fieldtype": "Section Break",
+      "label": "Permissions"
+    },
+    {
+      "fieldname": "depends_on",
+      "fieldtype": "Code",
+      "label": "Display Depends On (JS)",
+      "length": 255,
+      "max_height": "3rem",
+      "oldfieldname": "depends_on",
+      "oldfieldtype": "Data",
+      "options": "JS"
+    },
+    {
+      "default": "0",
+      "fieldname": "hidden",
+      "fieldtype": "Check",
+      "label": "Hidden",
+      "oldfieldname": "hidden",
+      "oldfieldtype": "Check",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "fieldname": "hidden_from_front",
+      "fieldtype": "Check",
+      "label": "Hidden From Front",
+      "description": "Don't send this field to the front",
+      "oldfieldname": "hidden_from_front",
+      "oldfieldtype": "Check",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "fieldname": "read_only",
+      "fieldtype": "Check",
+      "label": "Read Only",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "fieldname": "unique",
+      "fieldtype": "Check",
+      "label": "Unique"
+    },
+    {
+      "default": "0",
+      "fieldname": "set_only_once",
+      "fieldtype": "Check",
+      "label": "Set only once"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval: doc.fieldtype == \"Table\"",
+      "fieldname": "allow_bulk_edit",
+      "fieldtype": "Check",
+      "label": "Allow Bulk Edit"
+    },
+    {
+      "fieldname": "column_break_13",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:!in_list(['Section Break', 'Column Break', 'Tab Break'], doc.fieldtype)",
+      "fieldname": "permlevel",
+      "fieldtype": "Int",
+      "label": "Perm Level",
+      "oldfieldname": "permlevel",
+      "oldfieldtype": "Int",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "fieldname": "ignore_user_permissions",
+      "fieldtype": "Check",
+      "label": "Ignore User Permissions"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval: parent.is_submittable",
+      "fieldname": "allow_on_submit",
+      "fieldtype": "Check",
+      "label": "Allow on Submit",
+      "oldfieldname": "allow_on_submit",
+      "oldfieldtype": "Check",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "fieldname": "report_hide",
+      "fieldtype": "Check",
+      "label": "Report Hide",
+      "oldfieldname": "report_hide",
+      "oldfieldtype": "Check",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:(doc.fieldtype == 'Link')",
+      "fieldname": "remember_last_selected_value",
+      "fieldtype": "Check",
+      "label": "Remember Last Selected Value"
+    },
+    {
+      "default": "0",
+      "description": "Don't encode HTML tags like &lt;script&gt; or just characters like &lt; or &gt;, as they could be intentionally used in this field",
+      "fieldname": "ignore_xss_filter",
+      "fieldtype": "Check",
+      "label": "Ignore XSS Filter"
+    },
+    {
+      "fieldname": "display",
+      "fieldtype": "Section Break",
+      "label": "Display"
+    },
+    {
+      "default": "0",
+      "fieldname": "in_filter",
+      "fieldtype": "Check",
+      "label": "In Filter",
+      "oldfieldname": "in_filter",
+      "oldfieldtype": "Check",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "fieldname": "no_copy",
+      "fieldtype": "Check",
+      "label": "No Copy",
+      "oldfieldname": "no_copy",
+      "oldfieldtype": "Check",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "fieldname": "print_hide",
+      "fieldtype": "Check",
+      "label": "Print Hide",
+      "oldfieldname": "print_hide",
+      "oldfieldtype": "Check",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:[\"Int\", \"Float\", \"Currency\", \"Percent\"].indexOf(doc.fieldtype)!==-1",
+      "fieldname": "print_hide_if_no_value",
+      "fieldtype": "Check",
+      "label": "Print Hide If No Value"
+    },
+    {
+      "fieldname": "print_width",
+      "fieldtype": "Data",
+      "label": "Print Width",
+      "length": 10
+    },
+    {
+      "fieldname": "width",
+      "fieldtype": "Data",
+      "label": "Width",
+      "length": 10,
+      "oldfieldname": "width",
+      "oldfieldtype": "Data",
+      "print_width": "50px",
+      "width": "50px"
+    },
+    {
+      "description": "Number of columns for a field in a List View or a Grid (Total Columns should be less than 11)",
+      "fieldname": "columns",
+      "fieldtype": "Int",
+      "label": "Columns"
+    },
+    {
+      "fieldname": "column_break_22",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "in_list_view": 1,
+      "label": "Description",
+      "oldfieldname": "description",
+      "oldfieldtype": "Text",
+      "print_width": "300px",
+      "width": "300px"
+    },
+    {
+      "fieldname": "oldfieldname",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "oldfieldname": "oldfieldname",
+      "oldfieldtype": "Data"
+    },
+    {
+      "fieldname": "oldfieldtype",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "oldfieldname": "oldfieldtype",
+      "oldfieldtype": "Data"
+    },
+    {
+      "fieldname": "mandatory_depends_on",
+      "fieldtype": "Code",
+      "label": "Mandatory Depends On (JS)",
+      "max_height": "3rem",
+      "options": "JS"
+    },
+    {
+      "fieldname": "display_depends_on",
+      "fieldtype": "Data",
+      "label": "Display Depends On"
+    },
+    {
+      "fieldname": "compare_with",
+      "fieldtype": "Data",
+      "label": "Compare With"
+    },
+    {
+      "fieldname": "comparing_operator",
+      "depends_on": "eval:doc.compare_with",
+      "fieldtype": "Select",
+      "options": "\n=\n>\n<\n>=\n<=",
+      "label": "Comperating Operator"
+    },
+    {
+      "fieldname": "read_only_depends_on",
+      "fieldtype": "Code",
+      "label": "Read Only Depends On (JS)",
+      "max_height": "3rem",
+      "options": "JS"
+    },
+    {
+      "fieldname": "column_break_38",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:doc.fieldtype=='Duration'",
+      "fieldname": "hide_days",
+      "fieldtype": "Check",
+      "label": "Hide Days"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:doc.fieldtype=='Duration'",
+      "fieldname": "hide_seconds",
+      "fieldtype": "Check",
+      "label": "Hide Seconds"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:doc.fieldtype=='Section Break'",
+      "fieldname": "hide_border",
+      "fieldtype": "Check",
+      "label": "Hide Border"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:in_list([\"Int\", \"Float\", \"Currency\"], doc.fieldtype)",
+      "fieldname": "non_negative",
+      "fieldtype": "Check",
+      "label": "Non Negative"
+    },
+    {
+      "fieldname": "column_break_18",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "defaults_section",
+      "fieldtype": "Section Break",
+      "label": "Defaults",
+      "max_height": "2rem"
+    },
+    {
+      "fieldname": "visibility_section",
+      "fieldtype": "Section Break",
+      "label": "Visibility"
+    },
+    {
+      "fieldname": "column_break_28",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "constraints_section",
+      "fieldtype": "Section Break",
+      "label": "Constraints"
+    },
+    {
+      "fieldname": "max_height",
+      "fieldtype": "Data",
+      "label": "Max Height",
+      "length": 10
+    },
+    {
+      "fieldname": "list__search_settings_section",
+      "fieldtype": "Section Break",
+      "label": "List / Search Settings"
+    },
+    {
+      "fieldname": "column_break_35",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "is_status",
+      "fieldtype": "Check",
+      "label": "Is Status",
+      "default": "0",
+      "depends_on": "eval:in_list([\"Select\"], doc.fieldtype)",
+      "oldfieldname": "is_status"
+    },
+    {
+      "fieldname": "limit_condition",
+      "fieldtype": "Data",
+      "label": "Limit Condition",
+      "depends_on": "eval:in_list([\"Table MultiSelect\"], doc.fieldtype)",
+      "oldfieldname": "limit_condition"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval:doc.fieldtype===\"Tab Break\"",
+      "fieldname": "show_dashboard",
+      "fieldtype": "Check",
+      "label": "Show Dashboard"
+    },
+    {
+      "default": "0",
+      "fieldname": "is_virtual",
+      "fieldtype": "Check",
+      "label": "Virtual"
+    },
+    {
+      "depends_on": "eval:!in_list([\"Tab Break\", \"Section Break\", \"Column Break\", \"Button\", \"HTML\"], doc.fieldtype)",
+      "fieldname": "documentation_url",
+      "fieldtype": "Small Text",
+      "label": "Documentation URL"
+    },
+    {
+      "default": "0",
+      "depends_on": "eval: doc.fieldtype === 'Select'",
+      "fieldname": "sort_options",
+      "fieldtype": "Check",
+      "label": "Sort Options"
+    }
+  ],
+  "idx": 1,
+  "index_web_pages_for_search": 1,
+  "istable": 1,
+  "links": [],
+  "modified": "2023-11-16 17:35:31.202489",
+  "modified_by": "Administrator",
+  "module": "Core",
+  "name": "DocField",
+  "naming_rule": "Random",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "ASC",
+  "states": []
+}
